@@ -131,7 +131,6 @@ const Chat = ({items=[], setChat, user, onSubmit, supportInput, setSupportInput}
     };
 
     const updateInput = (e) => {
-        console.log(e.target.value)
         setSupportInput(e?.target?.value)
     }
 
@@ -154,8 +153,6 @@ const Chat = ({items=[], setChat, user, onSubmit, supportInput, setSupportInput}
         <>
             <ChatBody>
             {items?.sort((a, b) => a?.updatedAt - b?.updatedAt).map((item, key) => {
-              console.log('key', key)
-              console.log('items.length', items.length)
                 return (
                     <Row>
                         <Image size={28} src={!(items[key - 1]?.profilePic === item?.profilePic) ? item?.profilePic : ''} />
